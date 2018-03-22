@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <title>清华大学新闻检索系统</title>
+  <style type="text/css">
+  h1{
+    color:rgb(207, 220, 241);
+  }
+  #submitButton{
+    height: 60px;
+    font-size: 50px;
+    border-spacing: 0;
+  }  
+  </style>
+
+  <body>
+    <form>
+      <br>
+      <br>
+      <h1 align="center">清华大学新闻检索系统</h1>
+      <br>
+      <h2 align="center"><input type="text" name="input" value="" id="input" style=" width: 500px; height:30px; font-size: 16px " >
+      <input type="submit" name="search" value="搜索" id="submitButton"></h2>
+      <br>
+      <table align="center">
+        <tr >
+          <td><input type="radio" name="year" value="一年内" id="year">一年内</td>
+          <td><input type="radio" name="month" value="一月内" id="month">一月内</td>
+          <td><input type="radio" name="week" value="一周内" id="week">一周内</td>
+        </tr>   
+      </table>
+      <p align="center" style="color:red; font-size:18px">无搜索结果，请确认后重试</p>
+<!-- style=" height:30px; width:600px; font-size:18px"> -->
+    </form>
+  </body>
+</html>
+

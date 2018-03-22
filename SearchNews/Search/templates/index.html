@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <title>清华大学新闻检索系统</title>
+  <style type="text/css">
+  h1{
+    color:rgb(207, 220, 241);
+  }
+  #submitButton{
+    height: 60px;
+    font-size: 50px;
+    border-spacing: 0;
+  }  
+  </style>
+  <body>
+    <form>
+      <br>
+      <br>
+      <h1 align="center">清华大学新闻检索系统</h1>
+      <br>
+      <h2 align="center"><input type="text" name="input" value="" id="input" style=" width: 500px; height:30px; font-size: 16px ">
+      <input type="submit" name="search" value="搜索" id="submitButton"></h2>
+      <br>
+      <table align="center">
+        <tr >
+          <td><input type="radio" name="year" value="一年内" id="year">一年内</td>
+          <td><input type="radio" name="month" value="一月内" id="month">一月内</td>
+          <td><input type="radio" name="week" value="一周内" id="week">一周内</td>
+        </tr>   
+      </table>      
+      <br>
+      <p style="font-size:18pt; color:rgb(207, 220, 241)">共搜索到{{info_list_num}}条结果</p>
+      <br>
+      <br>
+      {% for i in info_list %}
+        <a href= '/static/html/{{i.url_num}}.html' style="font-size:14pt; color:rgb(194,207,138)">{{ i.title }}</a>
+        <br>
+        <br>
+        {% autoescape off %}
+        <p id="contain" style="font-weight:bold">{{ i.contain }}......</p>           
+        {% endautoescape %}
+        <br>
+        <p style="color:rgb(58,100,140)">{{ i.time }}</p>
+        <br>
+        <p style="color:rgb(58,100,140)">_______________________</p>
+        <br>
+        <br>
+        <br>
+      {% endfor %}  
+    </form>
+  </body>
+</html>
